@@ -507,7 +507,7 @@ form label {
         gap: 30px;
     }
 
-    .banner-content{
+    .banner-content {
         font-size: 0.7rem;
         width: 120%;
     }
@@ -686,7 +686,7 @@ form label {
         padding-top: 20px;
     }
 
-    .article-product{
+    .article-product {
         width: 100%;
     }
 
@@ -718,7 +718,7 @@ form label {
         gap: 30px;
     }
 
-    .banner-content{
+    .banner-content {
         font-size: 1.2rem;
         width: 120%;
     }
@@ -753,5 +753,9 @@ form label {
 
     .main-index-flex {
         padding-top: 200px;
+    }
+
+    .cta-checkout {
+        width: 50%;
     }
 }
