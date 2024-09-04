@@ -1,17 +1,19 @@
 import { fetchJackets } from "../../api/jackets/fetchJackets.js";
-import { createJackets } from "../../ui/jackets/createJackets.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
+import { createJacketsHtml } from "../../ui/jackets/createJacketsHtml.js";
 
 export function displayJackets() {
   document.addEventListener("DOMContentLoaded", async () => {
-    try {
-      let jacketsContainer = document.querySelector("#jackets-container");
+    console.log("DOM content loaded");
 
+    let container = document.querySelector("#jackets-container");
+
+    try {
       let jackets = await fetchJackets();
-      createJackets(jacketsContainer, jackets);
+      createJacketsHtml(container, jackets);
     } catch (error) {
       console.error(error);
-      displayMessage("#jackets-container", "error", error.message);
+      displayMessage(container, "error", error.message);
     }
   });
 }

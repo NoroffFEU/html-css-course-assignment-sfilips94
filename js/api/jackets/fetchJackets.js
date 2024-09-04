@@ -4,9 +4,9 @@ export async function fetchJackets() {
   let response = await fetch(url);
 
   if (response.ok) {
-    let jackets = await response.json();
-    return jackets;
+    let json = await response.json();
+    return json;
   }
 
-  throw new Error("Failed to fetch posts");
+  throw new Error("Error fetching jackets");
 }
