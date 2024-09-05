@@ -4,22 +4,25 @@ export function createJacketsHtml(container, jackets) {
   console.log("jackets", jackets);
 
   jackets.forEach((jacket) => {
-    let div = document.createElement("div");
-    div.classList.add("jacket");
+    let { id } = jacket;
 
-    let img = document.createElement("img");
-    img.src = jacket.image;
+    let jacketLink = document.createElement("a");
+    jacketLink.classList.add("jacket");
+    jacketLink.href = `details.html?id=${id}`;
+
+    let image = document.createElement("img");
+    image.src = jacket.image;
 
     let title = document.createElement("h4");
     title.textContent = jacket.title;
 
-    let body = document.createElement("p");
-    body.textContent = jacket.description;
+    let description = document.createElement("p");
+    description.textContent = jacket.description;
 
-    div.append(title);
-    div.append(body);
-    div.append(img);
+    jacketLink.append(title);
+    jacketLink.append(description);
+    jacketLink.append(image);
 
-    container.append(div);
+    container.append(jacketLink);
   });
 }
