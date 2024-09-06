@@ -1,7 +1,16 @@
 export function createJacketsHtml(container, jackets) {
-  container.innerHTML = "";
+  let parent = container;
 
-  console.log("jackets", jackets);
+  if (typeof container === "string") {
+    parent = document.querySelector(container);
+  }
+
+  if (jackets.length === 0) {
+    parent.innerHTML = "No products found";
+    return;
+  }
+
+  parent.innerHTML = "";
 
   jackets.forEach((jacket) => {
     let { id } = jacket;
@@ -23,6 +32,6 @@ export function createJacketsHtml(container, jackets) {
     jacketLink.append(description);
     jacketLink.append(image);
 
-    container.append(jacketLink);
+    parent.append(jacketLink);
   });
 }
