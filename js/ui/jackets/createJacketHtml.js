@@ -1,5 +1,9 @@
+import { isIdInCart } from "../../utils/cart.js";
+
 export function createJacketHtml(container, jacket) {
   container.innerHTML = "";
+
+  let { id } = jacket;
 
   console.log("jacket", jacket);
 
@@ -27,6 +31,19 @@ export function createJacketHtml(container, jacket) {
   let price = document.createElement("p");
   price.textContent = jacket.price;
 
+  let cartIcon = document.createElement("i");
+  cartIcon.classList.add("fa-solid");
+  cartIcon.id = "cart-icon";
+  cartIcon.dataset.id = jacket.id;
+  cartIcon.dataset.title = jacket.title;
+  cartIcon.dataset.price = jacket.price;
+
+  if (isIdInCart(id)) {
+    cartIcon.classList.add("fa-cart-shopping", "green");
+  } else {
+    cartIcon.classList.add("fa-cart-plus");
+  }
+
   jacketLink.append(title);
   jacketLink.append(description);
   jacketLink.append(image);
@@ -34,6 +51,7 @@ export function createJacketHtml(container, jacket) {
   jacketLink.append(sizes);
   jacketLink.append(price);
   jacketLink.append(baseColor);
+  jacketLink.append(cartIcon);
 
   container.append(jacketLink);
 }

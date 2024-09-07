@@ -767,3 +767,11 @@ a.jacket {
     display: block;
 
 }
+
+i {
+    font-size: 3rem;
+
+    &.green {
+        color: green;
+    }
+}
