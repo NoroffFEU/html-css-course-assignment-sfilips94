@@ -13,7 +13,7 @@ export function handleCategoryChange(jackets) {
     let selectedCategory = event.target.value;
 
     let filteredJackets = jackets.filter((jacket) => {
-      if (jacket.category === selectedCategory) {
+      if (jacket.gender === selectedCategory) {
         return true;
       }
     });
