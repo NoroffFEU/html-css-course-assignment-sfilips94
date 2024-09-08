@@ -5,8 +5,6 @@ import { displayCart } from "./handlers/cart/displayCart.js";
 function router() {
   let { pathname } = window.location;
 
-  console.log(pathname);
-
   switch (pathname) {
     case "/":
     case "/index.html":

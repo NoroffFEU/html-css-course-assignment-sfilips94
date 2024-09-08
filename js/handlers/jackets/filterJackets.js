@@ -7,15 +7,12 @@ export function filterJackets(jackets) {
   }
   function handleFilter(event) {
     let filterValue = event.target.value.trim().toLowerCase();
-    console.log(filterValue);
 
     let filterJackets = jackets.filter((jacket) => {
       if (jacket.title.toLowerCase().includes(filterValue)) {
         return true;
       }
     });
-
-    console.log(filterJackets);
 
     createJacketsHtml("#jackets-container", filterJackets);
   }

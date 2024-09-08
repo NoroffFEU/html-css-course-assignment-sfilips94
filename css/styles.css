@@ -775,3 +775,17 @@ i {
         color: green;
     }
 }
+
+.jackets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+.image-size {
+    width: 60%;
+}
+
+.image-size-details {
+    width: 20%;
+}

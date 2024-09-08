@@ -8,8 +8,6 @@ export function handleCategoryChange(jackets) {
   }
 
   function respondToCategoryChange(event) {
-    console.log(event.target.value);
-
     let selectedCategory = event.target.value;
 
     let filteredJackets = jackets.filter((jacket) => {

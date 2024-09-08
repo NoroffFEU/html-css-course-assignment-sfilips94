@@ -19,7 +19,6 @@ export function addToCart(id, title, price) {
   let cart = getCart();
   cart.push(newItem);
   saveToCart(cart);
-  //id inside add to cart and newItem??
 }
 
 export function removeFromCart(id) {
@@ -37,5 +36,6 @@ export function getTotalPrice(cart) {
     (accumulator, currentValue) => accumulator + currentValue.price,
     0
   );
+
   return total;
 }

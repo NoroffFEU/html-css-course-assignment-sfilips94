@@ -6,8 +6,6 @@ import { handleCategoryChange } from "./handleCategoryChange.js";
 
 export function displayJackets() {
   document.addEventListener("DOMContentLoaded", async () => {
-    console.log("DOM content loaded");
-
     let container = document.querySelector("#jackets-container");
 
     try {

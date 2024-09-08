@@ -5,13 +5,12 @@ export function createJacketHtml(container, jacket) {
 
   let { id } = jacket;
 
-  console.log("jacket", jacket);
-
   let jacketLink = document.createElement("div");
   jacketLink.classList.add("jacket-detail");
 
   let image = document.createElement("img");
   image.src = jacket.image;
+  image.classList.add("image-size-details");
 
   let title = document.createElement("h4");
   title.textContent = jacket.title;

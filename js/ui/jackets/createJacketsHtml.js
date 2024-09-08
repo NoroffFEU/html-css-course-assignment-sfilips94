@@ -21,6 +21,7 @@ export function createJacketsHtml(container, jackets) {
 
     let image = document.createElement("img");
     image.src = jacket.image;
+    image.classList.add("image-size");
 
     let title = document.createElement("h4");
     title.textContent = jacket.title;

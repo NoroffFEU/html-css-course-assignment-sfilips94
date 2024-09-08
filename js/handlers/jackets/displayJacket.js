@@ -7,8 +7,6 @@ import { handleCartIconClick } from "../cart/handleCartIconClick.js";
 export async function displayJacket() {
   let id = getQueryParam("id");
 
-  console.log("id", id);
-
   if (!id) {
     window.location.href = "/";
   }
@@ -23,7 +21,4 @@ export async function displayJacket() {
     console.error(error);
     displayMessage(container, "error", error.message);
   }
-
-  //let id = getQueryParam("id");
-  //console.log("id", id);
 }
