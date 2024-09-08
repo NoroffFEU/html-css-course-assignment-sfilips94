@@ -4,7 +4,7 @@ function saveToCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-function getCart() {
+export function getCart() {
   return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
@@ -26,4 +26,16 @@ export function removeFromCart(id) {
   let cart = getCart();
   let newCart = cart.filter((item) => item.id !== id);
   saveToCart(newCart);
+}
+
+export function clearCart() {
+  localStorage.removeItem(CART_KEY);
+}
+
+export function getTotalPrice(cart) {
+  let total = cart.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.price,
+    0
+  );
+  return total;
 }
